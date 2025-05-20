@@ -45,6 +45,8 @@
             height: 100%;
             border: none;
             background: white;
+            transform-origin: 0 0;
+            transform: scale(1);
         }
         .preview-container {
             position: relative;
@@ -64,9 +66,20 @@
             justify-content: center;
             opacity: 0;
             transition: opacity 0.3s ease;
+            border-radius: 20px;
         }
         .preview-container:hover .preview-overlay {
             opacity: 1;
+        }
+        @media (max-width: 768px) {
+            .preview-frame {
+                width: 320px;
+                height: 568px;
+            }
+            .preview-container {
+                width: 320px;
+                height: 568px;
+            }
         }
     </style>
 </head>
@@ -107,7 +120,7 @@
                                 <iframe src="pages/login.html"></iframe>
                             </div>
                             <div class="preview-overlay">
-                                <a href="pages/login.html" class="px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 text-sm">
+                                <a href="index1.html?page=pages/login.html" class="px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 text-sm">
                                     查看完整页面
                                 </a>
                             </div>
@@ -141,7 +154,7 @@
                                 <iframe src="pages/home.html"></iframe>
                             </div>
                             <div class="preview-overlay">
-                                <a href="pages/home.html" class="px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 text-sm">
+                                <a href="index1.html?page=pages/home.html" class="px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 text-sm">
                                     查看完整页面
                                 </a>
                             </div>
@@ -175,7 +188,7 @@
                                 <iframe src="pages/query.html"></iframe>
                             </div>
                             <div class="preview-overlay">
-                                <a href="pages/query.html" class="px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 text-sm">
+                                <a href="index1.html?page=pages/query.html" class="px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 text-sm">
                                     查看完整页面
                                 </a>
                             </div>
@@ -209,7 +222,7 @@
                                 <iframe src="pages/signing.html"></iframe>
                             </div>
                             <div class="preview-overlay">
-                                <a href="pages/signing.html" class="px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 text-sm">
+                                <a href="index1.html?page=pages/signing.html" class="px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 text-sm">
                                     查看完整页面
                                 </a>
                             </div>
@@ -243,7 +256,7 @@
                                 <iframe src="pages/querying.html"></iframe>
                             </div>
                             <div class="preview-overlay">
-                                <a href="pages/querying.html" class="px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 text-sm">
+                                <a href="index1.html?page=pages/querying.html" class="px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 text-sm">
                                     查看完整页面
                                 </a>
                             </div>
@@ -277,7 +290,7 @@
                                 <iframe src="pages/orders.html"></iframe>
                             </div>
                             <div class="preview-overlay">
-                                <a href="pages/orders.html" class="px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 text-sm">
+                                <a href="index1.html?page=pages/orders.html" class="px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 text-sm">
                                     查看完整页面
                                 </a>
                             </div>
@@ -311,7 +324,7 @@
                                 <iframe src="pages/order-detail.html"></iframe>
                             </div>
                             <div class="preview-overlay">
-                                <a href="pages/order-detail.html" class="px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 text-sm">
+                                <a href="index1.html?page=pages/order-detail.html" class="px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 text-sm">
                                     查看完整页面
                                 </a>
                             </div>
