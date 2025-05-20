@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 信贷资质查询系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+        .login-btn {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            transition: all 0.3s ease;
+        }
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex flex-col">
+        <!-- 顶部状态栏 -->
+        <div class="h-12 bg-white flex items-center justify-between px-4">
+            <div class="text-gray-600">9:41</div>
+            <div class="flex space-x-2">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+
+        <!-- 登录区域 -->
+        <div class="flex-1 flex flex-col justify-center px-6">
+            <div class="text-center mb-12">
+                <div class="w-20 h-20 bg-blue-600 rounded-2xl mx-auto flex items-center justify-center mb-4">
+                    <i class="fas fa-shield-alt text-white text-3xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-gray-900">信贷资质查询系统</h1>
+                <p class="text-gray-500 mt-2">安全、高效、专业的信贷查询平台</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-user text-gray-400"></i>
+                        <input type="text" class="flex-1 outline-none" placeholder="请输入渠道商账号">
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-lock text-gray-400"></i>
+                        <input type="password" class="flex-1 outline-none" placeholder="请输入密码">
+                    </div>
+                </div>
+
+             
+
+                <button onclick="window.location.href='home.html'" class="login-btn w-full text-white py-4 rounded-xl font-medium text-lg">
+                    登录
+                </button>
+            </div>
+
+            <div class="mt-8 text-center text-sm text-gray-500">
+                <p>还没有账号？请联系管理员开通</p>
+                <p class="mt-1">客服电话：400-888-8888</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

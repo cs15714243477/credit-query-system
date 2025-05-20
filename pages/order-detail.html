@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订单详情 - 信贷资质查询系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex flex-col">
+        <!-- 顶部状态栏 -->
+        <div class="h-12 bg-white flex items-center justify-between px-4">
+            <div class="text-gray-600">9:41</div>
+            <div class="flex space-x-2">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+
+        <!-- 顶部导航 -->
+        <div class="bg-white px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <a href="orders.html" class="text-gray-600">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+                <h1 class="text-lg font-medium">订单详情</h1>
+            </div>
+            <button class="text-blue-600">
+                <i class="fas fa-share-alt"></i>
+            </button>
+        </div>
+
+        <!-- 订单状态 -->
+        <div class="px-4 py-3">
+            <div class="bg-white rounded-xl shadow-sm p-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <div class="text-lg font-medium">张三</div>
+                        <div class="text-sm text-gray-500 mt-1">查询编号：Q202403210001</div>
+                    </div>
+                    <div class="px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm">未通过</div>
+                </div>
+                <div class="mt-4 flex items-center space-x-2">
+                    <span class="text-xs px-2 py-1 bg-blue-100 text-blue-600 rounded-full">大数据查询</span>
+                    <span class="text-xs px-2 py-1 bg-green-100 text-green-600 rounded-full">征信查询</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 客户信息 -->
+        <div class="px-4 py-2">
+            <div class="bg-white rounded-xl shadow-sm p-4">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="font-medium">客户信息</h3>
+                    <button class="text-blue-600 text-sm">
+                        <i class="fas fa-edit mr-1"></i>
+                        编辑
+                    </button>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex justify-between">
+                        <div class="text-gray-500">姓名</div>
+                        <div>张三</div>
+                    </div>
+                    <div class="flex justify-between">
+                        <div class="text-gray-500">身份证号</div>
+                        <div>110101199001011234</div>
+                    </div>
+                    <div class="flex justify-between">
+                        <div class="text-gray-500">手机号</div>
+                        <div>138****1234</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 查询结果 -->
+        <div class="px-4 py-2">
+            <div class="bg-white rounded-xl shadow-sm p-4">
+                <h3 class="font-medium mb-3">查询结果</h3>
+                <div class="space-y-4">
+                    <!-- 大数据查询结果 -->
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center">
+                                <i class="fas fa-database text-blue-600 mr-2"></i>
+                                <span>大数据查询</span>
+                            </div>
+                            <div class="text-sm text-gray-500">2024-03-21 15:30</div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-3 text-sm">
+                            <div class="text-red-600 mb-2">风险提示：存在逾期记录</div>
+                            <div class="text-gray-600">近3个月有2次逾期记录，建议谨慎评估</div>
+                        </div>
+                    </div>
+
+                    <!-- 征信查询结果 -->
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center">
+                                <i class="fas fa-file-invoice text-green-600 mr-2"></i>
+                                <span>征信查询</span>
+                            </div>
+                            <div class="text-sm text-gray-500">2024-03-21 15:31</div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-3 text-sm">
+                            <div class="text-red-600 mb-2">风险提示：信用评分较低</div>
+                            <div class="text-gray-600">信用评分：580分，低于行业平均水平</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 风控建议 -->
+        <div class="px-4 py-2">
+            <div class="bg-white rounded-xl shadow-sm p-4">
+                <h3 class="font-medium mb-3">风控建议</h3>
+                <div class="bg-blue-50 rounded-lg p-3 text-sm text-blue-700">
+                    <div class="flex items-start">
+                        <i class="fas fa-exclamation-circle mt-1 mr-2"></i>
+                        <div>
+                            <p>1. 建议客户先处理逾期记录</p>
+                            <p class="mt-1">2. 可考虑提供担保人或抵押物</p>
+                            <p class="mt-1">3. 建议降低授信额度</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 相关文档 -->
+        <div class="px-4 py-2">
+            <div class="bg-white rounded-xl shadow-sm p-4">
+                <h3 class="font-medium mb-3">相关文档</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div class="flex items-center">
+                            <i class="fas fa-file-pdf text-red-500 mr-2"></i>
+                            <span>大数据授权协议.pdf</span>
+                        </div>
+                        <button class="text-blue-600">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div class="flex items-center">
+                            <i class="fas fa-file-pdf text-red-500 mr-2"></i>
+                            <span>征信授权协议.pdf</span>
+                        </div>
+                        <button class="text-blue-600">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部按钮 -->
+        <div class="p-4 mt-auto">
+            <button class="w-full bg-blue-600 text-white py-4 rounded-xl font-medium shadow-lg hover:bg-blue-700 transition-colors">
+                重新查询
+            </button>
+        </div>
+    </div>
+</body>
+</html> 

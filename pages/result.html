@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查询结果 - 信贷资质查询系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex flex-col">
+        <!-- 顶部状态栏 -->
+        <div class="h-12 bg-white flex items-center justify-between px-4">
+            <div class="text-gray-600">9:41</div>
+            <div class="flex space-x-2">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+
+        <!-- 查询结果 -->
+        <div class="p-4 space-y-4">
+            <!-- 结果状态 -->
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                <div class="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center mx-auto">
+                    <i class="fas fa-times text-red-600 text-2xl"></i>
+                </div>
+                <h2 class="text-xl font-bold mt-4 text-red-600">查询未通过</h2>
+                <p class="text-gray-500 mt-2">查询时间：2024-03-21 15:30:45</p>
+            </div>
+
+            <!-- 拒绝原因 -->
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="font-medium mb-2">拒绝原因</div>
+                <div class="space-y-2 text-sm">
+                    <div class="flex items-start">
+                        <i class="fas fa-exclamation-circle text-red-500 mt-1"></i>
+                        <span class="ml-2">存在逾期记录：近12个月内有3次信用卡逾期</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-exclamation-circle text-red-500 mt-1"></i>
+                        <span class="ml-2">负债率过高：当前总负债超过年收入的80%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 风控建议 -->
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="font-medium mb-2">风控建议</div>
+                <div class="space-y-2 text-sm">
+                    <div class="flex items-start">
+                        <i class="fas fa-lightbulb text-yellow-500 mt-1"></i>
+                        <span class="ml-2">建议客户先结清现有逾期，并保持6个月以上良好还款记录</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-lightbulb text-yellow-500 mt-1"></i>
+                        <span class="ml-2">建议降低现有负债，将负债率控制在年收入的50%以下</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-lightbulb text-yellow-500 mt-1"></i>
+                        <span class="ml-2">可考虑增加担保人或抵押物，提高贷款通过率</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 相关文档 -->
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="font-medium mb-2">相关文档</div>
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between p-2 hover:bg-gray-50 rounded">
+                        <div class="flex items-center">
+                            <i class="fas fa-file-pdf text-red-500"></i>
+                            <span class="ml-2 text-sm">大数据查询报告</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                    <div class="flex items-center justify-between p-2 hover:bg-gray-50 rounded">
+                        <div class="flex items-center">
+                            <i class="fas fa-file-pdf text-red-500"></i>
+                            <span class="ml-2 text-sm">征信查询报告</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部按钮 -->
+        <div class="p-4 mt-auto">
+            <button onclick="window.location.href='home.html'" class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium shadow-lg hover:bg-blue-700 transition-colors">
+                返回首页
+            </button>
+        </div>
+    </div>
+</body>
+</html> 

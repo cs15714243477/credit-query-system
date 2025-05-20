@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订单中心 - 信贷资质查询系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .tab-active {
+            color: #1e40af;
+            border-bottom: 2px solid #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex flex-col">
+        <!-- 顶部状态栏 -->
+        <div class="h-12 bg-white flex items-center justify-between px-4">
+            <div class="text-gray-600">9:41</div>
+            <div class="flex space-x-2">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+
+        <!-- 顶部导航 -->
+        <div class="bg-white px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <a href="home.html" class="text-gray-600">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+                <h1 class="text-lg font-medium">订单中心</h1>
+            </div>
+            <button class="text-blue-600">
+                <i class="fas fa-filter"></i>
+            </button>
+        </div>
+
+        <!-- 订单统计 -->
+        <div class="px-4 py-3">
+            <div class="bg-white rounded-xl shadow-sm p-4">
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-blue-600">1,234</div>
+                        <div class="text-sm text-gray-500 mt-1">总订单</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-green-600">856</div>
+                        <div class="text-sm text-gray-500 mt-1">已通过</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-red-600">378</div>
+                        <div class="text-sm text-gray-500 mt-1">未通过</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 订单类型切换 -->
+        <div class="bg-white px-4">
+            <div class="flex space-x-6 border-b">
+                <button class="py-3 tab-active font-medium">全部</button>
+                <button class="py-3 text-gray-500">已通过</button>
+                <button class="py-3 text-gray-500">未通过</button>
+            </div>
+        </div>
+
+        <!-- 订单列表 -->
+        <div class="flex-1 px-4 py-3 space-y-3">
+            <!-- 订单项 -->
+            <div class="bg-white rounded-xl p-4 shadow-sm card-hover" onclick="window.location.href='order-detail.html'">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <div class="font-medium">张三</div>
+                        <div class="text-sm text-gray-500 mt-1">2024-03-21 15:30</div>
+                        <div class="flex items-center mt-2">
+                            <span class="text-xs px-2 py-1 bg-blue-100 text-blue-600 rounded-full">大数据查询</span>
+                            <span class="text-xs px-2 py-1 bg-green-100 text-green-600 rounded-full ml-2">征信查询</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-end">
+                        <div class="px-2 py-1 bg-red-100 text-red-600 rounded-full text-xs">未通过</div>
+                        <div class="mt-2 text-blue-600 text-sm">查看详情</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-4 shadow-sm card-hover" onclick="window.location.href='order-detail.html'">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <div class="font-medium">李四</div>
+                        <div class="text-sm text-gray-500 mt-1">2024-03-21 14:20</div>
+                        <div class="flex items-center mt-2">
+                            <span class="text-xs px-2 py-1 bg-blue-100 text-blue-600 rounded-full">大数据查询</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-end">
+                        <div class="px-2 py-1 bg-green-100 text-green-600 rounded-full text-xs">已通过</div>
+                        <div class="mt-2 text-blue-600 text-sm">查看详情</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-4 shadow-sm card-hover" onclick="window.location.href='order-detail.html'">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <div class="font-medium">王五</div>
+                        <div class="text-sm text-gray-500 mt-1">2024-03-21 13:15</div>
+                        <div class="flex items-center mt-2">
+                            <span class="text-xs px-2 py-1 bg-blue-100 text-blue-600 rounded-full">大数据查询</span>
+                            <span class="text-xs px-2 py-1 bg-green-100 text-green-600 rounded-full ml-2">征信查询</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-end">
+                        <div class="px-2 py-1 bg-green-100 text-green-600 rounded-full text-xs">已通过</div>
+                        <div class="mt-2 text-blue-600 text-sm">查看详情</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部导航栏 -->
+        <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200">
+            <div class="flex justify-around py-2">
+                <a href="home.html" class="flex flex-col items-center text-gray-400">
+                    <i class="fas fa-home text-xl"></i>
+                    <span class="text-xs mt-1">首页</span>
+                </a>
+                <a href="orders.html" class="flex flex-col items-center text-blue-600">
+                    <i class="fas fa-list text-xl"></i>
+                    <span class="text-xs mt-1">订单中心</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

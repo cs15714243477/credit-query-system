@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查询 - 信贷资质查询系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .next-btn {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            transition: all 0.3s ease;
+        }
+        .next-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex flex-col">
+        <!-- 顶部状态栏 -->
+        <div class="h-12 bg-white flex items-center justify-between px-4">
+            <div class="text-gray-600">9:41</div>
+            <div class="flex space-x-2">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+
+        <!-- 顶部导航 -->
+        <div class="bg-white px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <a href="home.html" class="text-gray-600">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+                <h1 class="text-lg font-medium">客户信息</h1>
+            </div>
+        </div>
+
+        <!-- 上传证件照片 -->
+        <div class="px-4 py-3">
+            <div class="bg-white rounded-xl shadow-sm p-4">
+                <h3 class="font-medium mb-4">上传身份证照片</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="card-hover bg-gray-50 rounded-xl p-4 border-2 border-dashed border-gray-300 flex flex-col items-center justify-center cursor-pointer" onclick="document.getElementById('idCardFront').click()">
+                        <i class="fas fa-camera text-gray-400 text-2xl mb-2"></i>
+                        <div class="text-sm text-gray-500">上传身份证正面</div>
+                        <input type="file" id="idCardFront" class="hidden" accept="image/*" onchange="handleIdCardUpload(this, 'front')">
+                    </div>
+                    <div class="card-hover bg-gray-50 rounded-xl p-4 border-2 border-dashed border-gray-300 flex flex-col items-center justify-center cursor-pointer" onclick="document.getElementById('idCardBack').click()">
+                        <i class="fas fa-camera text-gray-400 text-2xl mb-2"></i>
+                        <div class="text-sm text-gray-500">上传身份证反面</div>
+                        <input type="file" id="idCardBack" class="hidden" accept="image/*" onchange="handleIdCardUpload(this, 'back')">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 识别结果 -->
+        <div class="px-4 py-2">
+            <div class="bg-white rounded-xl shadow-sm p-4">
+                <h3 class="font-medium mb-4">识别结果</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm text-gray-500 mb-1">姓名</label>
+                        <input type="text" id="name" class="w-full px-3 py-2 bg-gray-50 rounded-lg outline-none" placeholder="等待识别..." readonly>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-500 mb-1">身份证号</label>
+                        <input type="text" id="idNumber" class="w-full px-3 py-2 bg-gray-50 rounded-lg outline-none" placeholder="等待识别..." readonly>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-500 mb-1">手机号</label>
+                        <input type="tel" id="phone" class="w-full px-3 py-2 bg-gray-50 rounded-lg outline-none" placeholder="请输入手机号">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部按钮 -->
+        <div class="p-4 mt-auto">
+            <button onclick="window.location.href='signing.html'" class="next-btn w-full text-white py-4 rounded-xl font-medium text-lg">
+                下一步
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function handleIdCardUpload(input, type) {
+            if (input.files && input.files[0]) {
+                // 这里应该调用身份证识别API
+                // 模拟识别结果
+                setTimeout(() => {
+                    if (type === 'front') {
+                        document.getElementById('name').value = '张三';
+                        document.getElementById('idNumber').value = '110101199001011234';
+                    }
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html> 
